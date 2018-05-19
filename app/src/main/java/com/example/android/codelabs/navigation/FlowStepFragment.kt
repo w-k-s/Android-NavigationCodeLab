@@ -34,14 +34,8 @@ class FlowStepFragment : Fragment() {
     ): View? {
         setHasOptionsMenu(true)
 
-        val step = arguments?.getInt("step")
-
-        // TODO STEP 9 - Use type-safe arguments - remove previous line!
-//        val step = arguments?.let {
-//            val safeArgs = FlowStepFragmentArgs.fromBundle(it)
-//            safeArgs.step
-//        }
-        // TODO ENDSTEP 9
+        val args = FlowStepFragmentArgs.fromBundle(arguments)
+        val step = args.step
 
         return when (step) {
             2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
